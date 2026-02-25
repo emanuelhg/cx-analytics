@@ -17,9 +17,15 @@ document.addEventListener("DOMContentLoaded", () => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return;
           const activeId = entry.target.getAttribute("id");
+          const activeLink = Array.from(navLinks).find(
+            (link) => link.getAttribute("href") === `#${activeId}`
+          );
+
+          // Keep last active menu item when current section is not in main nav.
+          if (!activeLink) return;
+
           navLinks.forEach((link) => {
-            const isActive = link.getAttribute("href") === `#${activeId}`;
-            link.classList.toggle("is-active", isActive);
+            link.classList.toggle("is-active", link === activeLink);
           });
         });
       },
