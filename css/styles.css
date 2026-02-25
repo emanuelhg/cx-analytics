@@ -198,7 +198,7 @@ body {
   position: relative;
 }
 
-#problemas.section-space {
+#desafios.section-space {
   padding-top: 4.4rem;
 }
 
@@ -241,7 +241,7 @@ body {
 }
 
 /* Alternancia homogénea entre secciones */
-#problemas,
+#desafios,
 #diferenciales,
 #contacto {
   background-color: #fcfcfc;
