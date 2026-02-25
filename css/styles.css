@@ -1,0 +1,237 @@
+:root {
+  --brand: #7a1f35;
+  --brand-dark: #5d1428;
+  --brand-soft: #f6ecef;
+  --text-main: #1f1f1f;
+  --surface: #ffffff;
+  --radius-lg: 1rem;
+  --shadow-soft: 0 12px 36px rgba(25, 16, 19, 0.1);
+  --shadow-card-hover: 0 20px 40px rgba(35, 21, 26, 0.16);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Manrope", "Segoe UI", sans-serif;
+  color: var(--text-main);
+  background:
+    radial-gradient(circle at 10% 0%, #f7eef1 0%, transparent 40%),
+    radial-gradient(circle at 100% 20%, #f2e7ea 0%, transparent 35%),
+    #fcfcfc;
+  line-height: 1.7;
+}
+
+.navbar {
+  backdrop-filter: saturate(1.2) blur(4px);
+}
+
+.navbar .nav-link {
+  font-weight: 600;
+  color: #303030;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+  color: var(--brand);
+}
+
+.brand-mark {
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: var(--brand);
+}
+
+.btn {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--brand);
+  --bs-btn-border-color: var(--brand);
+  --bs-btn-hover-bg: var(--brand-dark);
+  --bs-btn-hover-border-color: var(--brand-dark);
+  --bs-btn-active-bg: var(--brand-dark);
+  --bs-btn-active-border-color: var(--brand-dark);
+  --bs-btn-focus-shadow-rgb: 122, 31, 53;
+  box-shadow: 0 10px 24px rgba(122, 31, 53, 0.22);
+}
+
+.hero-section {
+  position: relative;
+  padding: 5.25rem 0 4.75rem;
+  background-image: url("https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1800&q=75");
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(110deg, rgba(19, 12, 14, 0.78) 0%, rgba(19, 12, 14, 0.66) 45%, rgba(28, 15, 20, 0.56) 100%),
+    linear-gradient(180deg, rgba(122, 31, 53, 0.25) 0%, rgba(122, 31, 53, 0.35) 100%);
+}
+
+.hero-section h1,
+.hero-section .hero-eyebrow,
+.hero-section .hero-lead {
+  color: #ffffff;
+}
+
+.hero-eyebrow {
+  display: inline-block;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 700;
+  margin-bottom: 0.85rem;
+}
+
+.hero-lead {
+  max-width: 58ch;
+  color: #eef0f1;
+}
+
+.hero-card {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 16px 40px rgba(12, 8, 10, 0.22);
+  padding: 1.55rem;
+}
+
+.section-space {
+  padding: 5.25rem 0;
+}
+
+.section-heading {
+  max-width: 700px;
+  margin-bottom: 2.4rem;
+}
+
+.section-heading h2 {
+  margin-bottom: 0.75rem;
+}
+
+.bg-soft {
+  background-color: var(--brand-soft);
+}
+
+.feature-card,
+.service-card,
+.contact-card {
+  background: var(--surface);
+  border: 1px solid #eee;
+  border-radius: var(--radius-lg);
+  padding: 1.4rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.feature-card:hover,
+.service-card:hover,
+.contact-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: #e7d3d8;
+}
+
+.card-icon {
+  font-size: 1.8rem;
+  line-height: 1;
+  color: var(--brand);
+  text-align: center;
+  margin-bottom: 0.85rem;
+}
+
+.service-card h3,
+.feature-card h3 {
+  text-align: center;
+  margin-bottom: 0.65rem;
+}
+
+.service-card p,
+.feature-card p {
+  text-align: center;
+}
+
+.form-label {
+  font-weight: 600;
+}
+
+.form-control {
+  border-radius: 0.7rem;
+  padding: 0.72rem 0.85rem;
+}
+
+.form-control:focus {
+  border-color: #c98a99;
+  box-shadow: 0 0 0 0.25rem rgba(122, 31, 53, 0.15);
+}
+
+.whatsapp-fab {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  width: 3.4rem;
+  height: 3.4rem;
+  border-radius: 50%;
+  background: #1fae4b;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.55rem;
+  text-decoration: none;
+  box-shadow: 0 12px 28px rgba(12, 82, 34, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  z-index: 1050;
+}
+
+.whatsapp-fab:hover,
+.whatsapp-fab:focus {
+  color: #fff;
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 14px 30px rgba(12, 82, 34, 0.4);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 991.98px) {
+  .hero-section {
+    padding: 4.25rem 0 3.9rem;
+    background-position: 62% center;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .section-space {
+    padding: 4rem 0;
+  }
+
+  .hero-section {
+    padding-top: 3.8rem;
+  }
+
+  .whatsapp-fab {
+    right: 0.9rem;
+    bottom: 0.9rem;
+  }
+}
