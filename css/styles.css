@@ -1,6 +1,7 @@
 :root {
   --brand: #7a1f35;
   --brand-dark: #5d1428;
+  --brand-mid: #8f2c45;
   --brand-soft: #f6ecef;
   --text-main: #1f1f1f;
   --surface: #ffffff;
@@ -16,25 +17,62 @@
 body {
   font-family: "Manrope", "Segoe UI", sans-serif;
   color: var(--text-main);
-  background:
-    radial-gradient(circle at 10% 0%, #f7eef1 0%, transparent 40%),
-    radial-gradient(circle at 100% 20%, #f2e7ea 0%, transparent 35%),
-    #fcfcfc;
+  background: #fcfcfc;
   line-height: 1.7;
+}
+
+.navbar {
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  background: rgba(255, 255, 255, 0.86);
+  transition: background-color 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
 .navbar {
   backdrop-filter: saturate(1.2) blur(4px);
 }
 
+.navbar.nav-scrolled {
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 12px 28px rgba(19, 12, 14, 0.08);
+  border-bottom-color: rgba(122, 31, 53, 0.12) !important;
+}
+
 .navbar .nav-link {
+  position: relative;
   font-weight: 600;
   color: #303030;
+  padding-top: 0.35rem;
+  padding-bottom: 0.35rem;
 }
 
 .navbar .nav-link:hover,
 .navbar .nav-link:focus {
   color: var(--brand);
+}
+
+.main-nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0.5rem;
+  right: 0.5rem;
+  bottom: -0.15rem;
+  height: 2px;
+  border-radius: 20px;
+  background-color: var(--brand);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.25s ease;
+}
+
+.main-nav-link:hover::after,
+.main-nav-link:focus-visible::after,
+.main-nav-link.is-active::after {
+  transform: scaleX(1);
+}
+
+.main-nav-link.is-active {
+  color: var(--brand) !important;
 }
 
 .brand-mark {
@@ -44,12 +82,7 @@ body {
 }
 
 .btn {
-  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
-}
-
-.btn:hover,
-.btn:focus-visible {
-  transform: translateY(-2px);
+  transition: box-shadow 0.22s ease, background-color 0.22s ease, border-color 0.22s ease, color 0.22s ease;
 }
 
 .btn-primary {
@@ -63,27 +96,49 @@ body {
   box-shadow: 0 10px 24px rgba(122, 31, 53, 0.22);
 }
 
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  box-shadow: 0 12px 26px rgba(122, 31, 53, 0.26);
+}
+
 .hero-section {
   position: relative;
-  padding: 5.25rem 0 4.75rem;
+  padding: 6rem 0 5.25rem;
   background-image: url("https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1800&q=75");
   background-size: cover;
   background-position: center;
   overflow: hidden;
+  border-bottom: 1px solid rgba(122, 31, 53, 0.12);
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
+  z-index: 0;
+  pointer-events: none;
   background:
     linear-gradient(110deg, rgba(19, 12, 14, 0.78) 0%, rgba(19, 12, 14, 0.66) 45%, rgba(28, 15, 20, 0.56) 100%),
     linear-gradient(180deg, rgba(122, 31, 53, 0.25) 0%, rgba(122, 31, 53, 0.35) 100%);
+}
+
+.hero-section::after {
+  content: none;
+}
+
+.hero-section .container {
+  z-index: 1;
 }
 
 .hero-section h1,
 .hero-section .hero-eyebrow,
 .hero-section .hero-lead {
   color: #ffffff;
+}
+
+.hero-section h1 {
+  font-size: clamp(2rem, 4vw, 3.05rem);
+  letter-spacing: -0.02em;
+  max-width: 16ch;
 }
 
 .hero-eyebrow {
@@ -93,6 +148,10 @@ body {
   letter-spacing: 0.14em;
   font-weight: 700;
   margin-bottom: 0.85rem;
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.22);
 }
 
 .hero-lead {
@@ -101,15 +160,25 @@ body {
 }
 
 .hero-card {
-  background: rgba(255, 255, 255, 0.92);
-  border: 1px solid rgba(255, 255, 255, 0.9);
+  position: relative;
+  background: rgba(255, 255, 255, 0.93);
+  border: 1px solid rgba(255, 255, 255, 0.88);
   border-radius: var(--radius-lg);
   box-shadow: 0 16px 40px rgba(12, 8, 10, 0.22);
-  padding: 1.55rem;
+  padding: 1.7rem;
 }
 
 .section-space {
   padding: 5.25rem 0;
+  position: relative;
+}
+
+#problemas.section-space {
+  padding-top: 4.4rem;
+}
+
+.section-space::before {
+  content: none;
 }
 
 .section-heading {
@@ -118,11 +187,96 @@ body {
 }
 
 .section-heading h2 {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.45rem;
   margin-bottom: 0.75rem;
+  letter-spacing: -0.015em;
+}
+
+.section-heading h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 52px;
+  height: 3px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, var(--brand), var(--brand-mid));
+}
+
+.section-heading p {
+  font-size: 1.04rem;
+  max-width: 60ch;
 }
 
 .bg-soft {
-  background-color: var(--brand-soft);
+  background-color: #faf6f7;
+  background-image: none;
+}
+
+/* Alternancia homogénea entre secciones */
+#problemas,
+#diferenciales,
+#contacto {
+  background-color: #fcfcfc;
+  background-image: none;
+}
+
+#servicios,
+#metodologia {
+  background-color: #faf6f7;
+  background-image: none;
+}
+
+.site-footer {
+  position: relative;
+  background-color: #ffffff;
+  border-top: 1px solid #efe8ea;
+}
+
+.site-footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(122, 31, 53, 0.1) 0%, rgba(122, 31, 53, 0.45) 35%, rgba(122, 31, 53, 0.1) 100%);
+}
+
+.footer-brand {
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  color: var(--brand);
+}
+
+.footer-title {
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: #5a5960;
+}
+
+.footer-links li + li {
+  margin-top: 0.55rem;
+}
+
+.footer-links a {
+  color: #4f5763;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover,
+.footer-links a:focus {
+  color: var(--brand);
+}
+
+.footer-bottom {
+  border-top: 1px solid #efe8ea;
 }
 
 .feature-card,
@@ -150,7 +304,14 @@ body {
   line-height: 1;
   color: var(--brand);
   text-align: center;
-  margin-bottom: 0.85rem;
+  margin: 0 auto 0.85rem;
+  width: 3.15rem;
+  height: 3.15rem;
+  border-radius: 0.9rem;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(145deg, #f9f0f2 0%, #f4e4e8 100%);
+  border: 1px solid #edd8dd;
 }
 
 .service-card h3,
@@ -220,6 +381,10 @@ body {
   .hero-section {
     padding: 4.25rem 0 3.9rem;
     background-position: 62% center;
+  }
+
+  .section-heading p {
+    font-size: 1rem;
   }
 }
 
