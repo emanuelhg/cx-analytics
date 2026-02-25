@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top border-bottom border-light-subtle">
+  <nav id="siteNav" class="navbar navbar-expand-lg navbar-light sticky-top border-bottom border-light-subtle">
     <div class="container">
       <a class="navbar-brand brand-mark" href="#inicio">EG CX Analytics</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Abrir navegación">
@@ -25,10 +25,10 @@
       </button>
       <div class="collapse navbar-collapse" id="mainNav">
         <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
-          <li class="nav-item"><a class="nav-link" href="#problemas">Desafíos</a></li>
-          <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
-          <li class="nav-item"><a class="nav-link" href="#diferenciales">Diferenciales</a></li>
-          <li class="nav-item"><a class="nav-link" href="#metodologia">Metodología</a></li>
+          <li class="nav-item"><a class="nav-link main-nav-link" href="#problemas">Desafíos</a></li>
+          <li class="nav-item"><a class="nav-link main-nav-link" href="#servicios">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link main-nav-link" href="#diferenciales">Diferenciales</a></li>
+          <li class="nav-item"><a class="nav-link main-nav-link" href="#metodologia">Metodología</a></li>
           <li class="nav-item"><a class="btn btn-primary ms-lg-2" href="#contacto">Solicitar diagnóstico</a></li>
         </ul>
       </div>
@@ -247,10 +247,35 @@
     </section>
   </main>
 
-  <footer class="py-4 border-top bg-white">
-    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
-      <p class="mb-0 text-secondary small">© <span id="year"></span> EG CX Analytics. Todos los derechos reservados.</p>
-      <p class="mb-0 text-secondary small">Auditoría de calidad, coaching y optimización CX para call centers.</p>
+  <footer class="site-footer py-5">
+    <div class="container">
+      <div class="row g-4 align-items-start">
+        <div class="col-lg-5">
+          <p class="footer-brand mb-2">EG CX Analytics</p>
+          <p class="text-secondary mb-0">Auditoría de calidad, coaching y optimización CX para operaciones de call center.</p>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <p class="footer-title mb-2">Navegación</p>
+          <ul class="list-unstyled mb-0 footer-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#problemas">Desafíos</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#diferenciales">Diferenciales</a></li>
+            <li><a href="#metodologia">Metodología</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <p class="footer-title mb-2">Contacto</p>
+          <ul class="list-unstyled mb-0 footer-links">
+            <li><a href="mailto:contacto@egcxanalytics.com">contacto@egcxanalytics.com</a></li>
+            <li><a href="https://wa.me/5490000000000?text=Hola%20EG%20CX%20Analytics%2C%20quiero%20solicitar%20un%20diagn%C3%B3stico." target="_blank" rel="noopener noreferrer">WhatsApp directo</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom mt-4 pt-3">
+        <p class="mb-0 text-secondary small">© <span id="year"></span> EG CX Analytics. Todos los derechos reservados.</p>
+      </div>
     </div>
   </footer>
 

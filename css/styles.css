@@ -17,30 +17,62 @@
 body {
   font-family: "Manrope", "Segoe UI", sans-serif;
   color: var(--text-main);
-  background:
-    radial-gradient(circle at 10% 0%, #f7eef1 0%, transparent 40%),
-    radial-gradient(circle at 100% 20%, #f2e7ea 0%, transparent 35%),
-    #fcfcfc;
+  background: #fcfcfc;
   line-height: 1.7;
 }
 
 .navbar {
   padding-top: 0.8rem;
   padding-bottom: 0.8rem;
+  background: rgba(255, 255, 255, 0.86);
+  transition: background-color 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
 .navbar {
   backdrop-filter: saturate(1.2) blur(4px);
 }
 
+.navbar.nav-scrolled {
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 12px 28px rgba(19, 12, 14, 0.08);
+  border-bottom-color: rgba(122, 31, 53, 0.12) !important;
+}
+
 .navbar .nav-link {
+  position: relative;
   font-weight: 600;
   color: #303030;
+  padding-top: 0.35rem;
+  padding-bottom: 0.35rem;
 }
 
 .navbar .nav-link:hover,
 .navbar .nav-link:focus {
   color: var(--brand);
+}
+
+.main-nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0.5rem;
+  right: 0.5rem;
+  bottom: -0.15rem;
+  height: 2px;
+  border-radius: 20px;
+  background-color: var(--brand);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.25s ease;
+}
+
+.main-nav-link:hover::after,
+.main-nav-link:focus-visible::after,
+.main-nav-link.is-active::after {
+  transform: scaleX(1);
+}
+
+.main-nav-link.is-active {
+  color: var(--brand) !important;
 }
 
 .brand-mark {
@@ -50,12 +82,7 @@ body {
 }
 
 .btn {
-  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
-}
-
-.btn:hover,
-.btn:focus-visible {
-  transform: translateY(-2px);
+  transition: box-shadow 0.22s ease, background-color 0.22s ease, border-color 0.22s ease, color 0.22s ease;
 }
 
 .btn-primary {
@@ -69,6 +96,11 @@ body {
   box-shadow: 0 10px 24px rgba(122, 31, 53, 0.22);
 }
 
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  box-shadow: 0 12px 26px rgba(122, 31, 53, 0.26);
+}
+
 .hero-section {
   position: relative;
   padding: 6rem 0 5.25rem;
@@ -76,6 +108,7 @@ body {
   background-size: cover;
   background-position: center;
   overflow: hidden;
+  border-bottom: 1px solid rgba(122, 31, 53, 0.12);
 }
 
 .hero-overlay {
@@ -89,13 +122,7 @@ body {
 }
 
 .hero-section::after {
-  content: "";
-  position: absolute;
-  inset: auto 0 0 0;
-  height: 140px;
-  z-index: 0;
-  pointer-events: none;
-  background: linear-gradient(180deg, rgba(252, 252, 252, 0) 0%, rgba(252, 252, 252, 0.96) 100%);
+  content: none;
 }
 
 .hero-section .container {
@@ -141,30 +168,17 @@ body {
   padding: 1.7rem;
 }
 
-.hero-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  border-radius: 1rem 1rem 0 0;
-  background: linear-gradient(90deg, var(--brand), var(--brand-mid));
-}
-
 .section-space {
   padding: 5.25rem 0;
   position: relative;
 }
 
+#problemas.section-space {
+  padding-top: 4.4rem;
+}
+
 .section-space::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: min(1120px, 92%);
-  transform: translateX(-50%);
-  border-top: 1px solid rgba(122, 31, 53, 0.08);
+  content: none;
 }
 
 .section-heading {
@@ -197,8 +211,72 @@ body {
 }
 
 .bg-soft {
-  background-color: var(--brand-soft);
-  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.22) 0%, rgba(255, 255, 255, 0) 100%);
+  background-color: #faf6f7;
+  background-image: none;
+}
+
+/* Alternancia homogénea entre secciones */
+#problemas,
+#diferenciales,
+#contacto {
+  background-color: #fcfcfc;
+  background-image: none;
+}
+
+#servicios,
+#metodologia {
+  background-color: #faf6f7;
+  background-image: none;
+}
+
+.site-footer {
+  position: relative;
+  background-color: #ffffff;
+  border-top: 1px solid #efe8ea;
+}
+
+.site-footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(122, 31, 53, 0.1) 0%, rgba(122, 31, 53, 0.45) 35%, rgba(122, 31, 53, 0.1) 100%);
+}
+
+.footer-brand {
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  color: var(--brand);
+}
+
+.footer-title {
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: #5a5960;
+}
+
+.footer-links li + li {
+  margin-top: 0.55rem;
+}
+
+.footer-links a {
+  color: #4f5763;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover,
+.footer-links a:focus {
+  color: var(--brand);
+}
+
+.footer-bottom {
+  border-top: 1px solid #efe8ea;
 }
 
 .feature-card,
