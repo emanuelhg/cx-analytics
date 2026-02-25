@@ -1,39 +1,74 @@
-# EG CX Analytics Landing Page
+# EG CX Analytics - Landing Page
 
-Landing page estática y responsive para **EG CX Analytics**, enfocada en servicios de auditoría de calidad, coaching y optimización de experiencia del cliente (CX) para call centers.
+Landing page estatica y responsive para **EG CX Analytics**, orientada a servicios de auditoria de calidad, coaching y optimizacion de experiencia del cliente (CX) para operaciones de call center.
 
-## Estructura
+## Objetivo
 
-```text
-.
-├── index.html
-├── css/
-│   └── styles.css
-├── js/
-│   └── main.js
-├── assets/
-├── .nojekyll
-└── README.md
-```
+Presentar la propuesta de valor de la marca con una experiencia visual profesional y un flujo de contacto simple sin backend.
 
-## Tecnologías
+## Stack
 
 - HTML5
 - CSS3
 - JavaScript (vanilla)
-- Bootstrap 5 (CDN)
+- Bootstrap 5 via CDN
+- Bootstrap Icons via CDN
 
-## Uso local
+## Estructura del proyecto
 
-1. Clona o descarga este repositorio.
-2. Abre `index.html` directamente en tu navegador.
+```text
+.
+|-- index.html
+|-- css/
+|   `-- styles.css
+|-- js/
+|   `-- main.js
+|-- assets/
+|   |-- .gitkeep
+|   |-- hero-bg.svg
+|   `-- logo-v2.svg
+|-- .nojekyll
+`-- README.md
+```
 
-No requiere instalación ni backend.
+## Funcionalidades principales
 
-## Publicación en GitHub Pages
+- Navbar sticky con estado activo segun seccion visible.
+- Hero con fondo local optimizado (`assets/hero-bg.svg`).
+- Secciones de desafios, servicios, diferenciales, metodologia y contacto.
+- Tarjetas con iconos y efectos hover suaves.
+- Animaciones de entrada (`reveal`) con `IntersectionObserver`.
+- Formulario de contacto sin backend usando `mailto`.
+- Boton flotante de WhatsApp.
+- Footer con navegacion rapida y datos de contacto.
 
-1. Sube los archivos a tu repositorio.
-2. Activa **GitHub Pages** desde `Settings > Pages`.
-3. Selecciona la rama principal y carpeta raíz (`/`).
+## Ejecucion local
 
-El archivo `.nojekyll` ya está incluido para evitar procesamiento de Jekyll.
+1. Clona este repositorio.
+2. Abre `index.html` en tu navegador.
+
+No requiere instalar dependencias ni levantar servidor.
+
+## Publicacion en GitHub Pages
+
+1. Sube el contenido al repositorio remoto.
+2. En GitHub, entra a `Settings > Pages`.
+3. En `Build and deployment`, selecciona:
+   - `Source`: `Deploy from a branch`
+   - `Branch`: `main` y carpeta `/ (root)`
+4. Guarda cambios y espera la publicacion.
+
+El archivo `.nojekyll` ya esta incluido para evitar procesamiento de Jekyll.
+
+## Personalizacion rapida
+
+- Logo: reemplaza `assets/logo-v2.svg`.
+- Fondo hero: reemplaza `assets/hero-bg.svg`.
+- Colores: variables CSS en `:root` dentro de `css/styles.css`.
+- Textos y secciones: `index.html`.
+- Logica UI (nav activo, reveal, mailto): `js/main.js`.
+
+## Notas
+
+- El sitio esta pensado para ser 100% estatico.
+- Si luego necesitas formulario real (sin `mailto`), se puede conectar a un backend o servicio externo.
