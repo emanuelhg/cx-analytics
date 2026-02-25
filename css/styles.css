@@ -127,7 +127,8 @@ body {
 
 .feature-card,
 .service-card,
-.contact-card {
+.contact-card,
+.method-card {
   background: var(--surface);
   border: 1px solid #eee;
   border-radius: var(--radius-lg);
@@ -137,7 +138,8 @@ body {
 
 .feature-card:hover,
 .service-card:hover,
-.contact-card:hover {
+.contact-card:hover,
+.method-card:hover {
   transform: translateY(-6px);
   box-shadow: var(--shadow-card-hover);
   border-color: #e7d3d8;
