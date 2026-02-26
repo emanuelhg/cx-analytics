@@ -314,11 +314,6 @@ body {
   justify-content: flex-start;
 }
 
-.mobile-social-inline {
-  margin-left: auto;
-  margin-right: 0.55rem;
-}
-
 .social-links-label {
   font-size: 0.92rem;
   font-weight: 600;
@@ -360,6 +355,12 @@ body {
   background: rgba(255, 255, 255, 0.2);
   border-color: rgba(255, 255, 255, 0.6);
   color: #fff;
+}
+
+.site-footer .social-icon-link {
+  width: 3.15rem;
+  height: 3.15rem;
+  font-size: 1.48rem;
 }
 
 .footer-bottom {
@@ -469,6 +470,10 @@ body {
     display: none;
   }
 
+  .navbar-toggler {
+    margin-left: auto;
+  }
+
   .social-nav {
     display: none !important;
   }
@@ -476,12 +481,6 @@ body {
   .hero-section {
     padding: 4.25rem 0 3.9rem;
     background-position: 62% center;
-  }
-
-  .mobile-social-inline .social-icon-link {
-    width: 2.05rem;
-    height: 2.05rem;
-    font-size: 0.96rem;
   }
 
   .section-heading p {
