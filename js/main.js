@@ -68,6 +68,20 @@ document.addEventListener("DOMContentLoaded", () => {
     revealItems.forEach((item) => observer.observe(item));
   }
 
+  const mainNav = document.getElementById("mainNav");
+  const navCloseLinks = document.querySelectorAll('#mainNav a[href^="#"]');
+
+  if (mainNav && navCloseLinks.length && window.bootstrap?.Collapse) {
+    navCloseLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        if (!window.matchMedia("(max-width: 991.98px)").matches) return;
+        if (!mainNav.classList.contains("show")) return;
+
+        window.bootstrap.Collapse.getOrCreateInstance(mainNav).hide();
+      });
+    });
+  }
+
   const form = document.getElementById("contactForm");
   const feedback = document.getElementById("formFeedback");
 
