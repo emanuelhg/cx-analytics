@@ -466,6 +466,14 @@ body {
 }
 
 @media (max-width: 991.98px) {
+  #mainNav.collapsing {
+    transition-duration: 0.14s;
+  }
+
+  .navbar {
+    backdrop-filter: none;
+  }
+
   .main-nav-link::after {
     display: none;
   }
