@@ -511,6 +511,12 @@ body {
     font-size: 1.02rem;
   }
 
+  .site-footer .social-icon-link {
+    width: 3.15rem;
+    height: 3.15rem;
+    font-size: 1.48rem;
+  }
+
   .whatsapp-fab {
     right: 0.9rem;
     bottom: 0.9rem;
