@@ -72,3 +72,10 @@ El archivo `.nojekyll` ya esta incluido para evitar procesamiento de Jekyll.
 
 - El sitio esta pensado para ser 100% estatico.
 - Si luego necesitas formulario real (sin `mailto`), se puede conectar a un backend o servicio externo.
+
+## SEO tecnico inicial
+
+- Metaetiquetas basicas para buscadores y redes (`description`, Open Graph y Twitter Card).
+- Canonical configurado para GitHub Pages.
+- Datos estructurados `JSON-LD` tipo `Organization`.
+- `robots.txt` y `sitemap.xml` incluidos en la raiz.
