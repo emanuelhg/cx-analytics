@@ -300,6 +300,68 @@ body {
   color: var(--brand);
 }
 
+.social-nav {
+  gap: 0.45rem;
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.social-links-mobile {
+  justify-content: flex-start;
+}
+
+.mobile-social-inline {
+  margin-left: auto;
+  margin-right: 0.55rem;
+}
+
+.social-links-label {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  margin-right: 0.25rem;
+}
+
+.social-icon-link {
+  width: 2.3rem;
+  height: 2.3rem;
+  font-size: 1.1rem;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e6d3d8;
+  background: #fff;
+  color: var(--brand);
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.social-icon-link:hover,
+.social-icon-link:focus-visible {
+  color: var(--brand-dark);
+  border-color: #d2a6b3;
+  box-shadow: 0 8px 20px rgba(122, 31, 53, 0.18);
+  transform: translateY(-2px);
+}
+
+.social-links-light .social-icon-link {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.35);
+  color: #fff;
+}
+
+.social-links-light .social-icon-link:hover,
+.social-links-light .social-icon-link:focus-visible {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.6);
+  color: #fff;
+}
+
 .footer-bottom {
   border-top: 1px solid #efe8ea;
 }
@@ -407,9 +469,19 @@ body {
     display: none;
   }
 
+  .social-nav {
+    display: none !important;
+  }
+
   .hero-section {
     padding: 4.25rem 0 3.9rem;
     background-position: 62% center;
+  }
+
+  .mobile-social-inline .social-icon-link {
+    width: 2.05rem;
+    height: 2.05rem;
+    font-size: 0.96rem;
   }
 
   .section-heading p {
@@ -428,6 +500,16 @@ body {
 
   .hero-section {
     padding-top: 3.8rem;
+  }
+
+  .social-links-label {
+    font-size: 0.88rem;
+  }
+
+  .social-icon-link {
+    width: 2.15rem;
+    height: 2.15rem;
+    font-size: 1.02rem;
   }
 
   .whatsapp-fab {
