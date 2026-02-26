@@ -403,6 +403,10 @@ body {
 }
 
 @media (max-width: 991.98px) {
+  .main-nav-link::after {
+    display: none;
+  }
+
   .hero-section {
     padding: 4.25rem 0 3.9rem;
     background-position: 62% center;
